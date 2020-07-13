@@ -1,4 +1,4 @@
-import databases
+import os
 import ujson
 from fastapi_plugins import redis_plugin
 from fastapi import FastAPI
@@ -18,7 +18,9 @@ app = FastAPI(
 if settings.BACKEND_CORS_ORIGINS:
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=[str(origin) for origin in settings.BACKEND_CORS_ORIGINS],
+        allow_origins=[
+            str(origin) for origin in settings.BACKEND_CORS_ORIGINS
+        ],
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
@@ -56,6 +58,8 @@ async def on_shutdown() -> None:
     await database.disconnect()
 
 
-if __name__ == "__main__":
+DEBUG = os.getenv("DEBUG") == 'True'
+
+if __name__ == "__main__" and DEBUG:
     import uvicorn
     uvicorn.run("main:app", debug=True, reload=True)
