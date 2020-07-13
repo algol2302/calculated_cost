@@ -1,4 +1,6 @@
-# calculated cost
+# Calculated cost
+
+* The FastAPI app for cost calculating.
 
 ## Design
 
@@ -6,7 +8,7 @@
 something like sentinel (see https://redis.io/topics/sentinel).
 * All requests logs to PostgreSQL.
 * There is JWT authorization.
-* There are `prod.env` and `local.env` (of course it unsafe, but for studying it's ok).
+* There are `prod.env` and `local.env` (of course it unsafe, but for studying it's ok). 
 
 ## To run the app just clone the repo and enter:
 ```
