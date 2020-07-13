@@ -8,7 +8,8 @@
 For big json files it's required something like sentinel (see https://redis.io/topics/sentinel).
 * All requests logs to PostgreSQL.
 * There is JWT authorization.
-* There are `prod.env` and `local.env` (of course it unsafe, but for studying it's ok). 
+* There are `prod.env` and `local.env` (of course it unsafe, but for studying it's ok).
+* Can add some domain names to `BACKEND_CORS_ORIGINS` (`prod.env` and `local.env`) for the JS-frontend. 
 
 ## To run the app just clone the repo and enter:
 ```
