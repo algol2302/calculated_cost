@@ -14,10 +14,12 @@ api_router.include_router(calculated_cost.router, tags=["calculated_cost"])
 
 # users
 api_router.include_router(
-    fastapi_users.get_auth_router(jwt_authentication), prefix="/auth/jwt", tags=["auth"]
+    fastapi_users.get_auth_router(jwt_authentication),
+    prefix="/auth/jwt", tags=["auth"]
 )
 api_router.include_router(
-    fastapi_users.get_register_router(on_after_register), prefix="/auth", tags=["auth"]
+    fastapi_users.get_register_router(on_after_register),
+    prefix="/auth", tags=["auth"]
 )
 api_router.include_router(
     fastapi_users.get_reset_password_router(
@@ -26,4 +28,6 @@ api_router.include_router(
     prefix="/auth",
     tags=["auth"],
 )
-api_router.include_router(fastapi_users.get_users_router(), prefix="/users", tags=["users"])
+api_router.include_router(
+    fastapi_users.get_users_router(), prefix="/users", tags=["users"]
+)
