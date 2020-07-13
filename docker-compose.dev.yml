@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+    db:
+        image: postgres:12-alpine
+        env_file:
+            - local.env
+        volumes:
+            - ./db/data:/var/lib/postgresql/data
+        ports:
+            - 5432:5432
+        restart: always
+
+    redis:
+        image: redis:6-alpine
+        env_file:
+            - local.env
+        ports:
+            - 6379:6379
+        restart: always
+
+#    backend:
+#        volumes:
+#            - ./backend/app:/app
+#        depends_on:
+#            - db
+#            - redis
+#        env_file:
+#            - local.env
+#        build:
+#            context: ./backend
+#            dockerfile: Dockerfile
+#            args:
+#                INSTALL_DEV: ${INSTALL_DEV-false}
+#        ports:
+#            - 80:80
+#        command: /uvicorn_run.sh
+#        restart: always

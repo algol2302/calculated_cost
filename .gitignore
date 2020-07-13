@@ -1,0 +1,5 @@
+*__pycache__*
+.idea/
+/backend/app/.venv/
+prod.env
+/db/main
