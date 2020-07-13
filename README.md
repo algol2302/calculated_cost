@@ -4,8 +4,8 @@
 
 ## Design
 
-* The file `tarif.json` saves to Redis. For big json files it's required 
-something like sentinel (see https://redis.io/topics/sentinel).
+* The file `tarif.json` saves to Redis for the maximum response velocity. 
+For big json files it's required something like sentinel (see https://redis.io/topics/sentinel).
 * All requests logs to PostgreSQL.
 * There is JWT authorization.
 * There are `prod.env` and `local.env` (of course it unsafe, but for studying it's ok). 
