@@ -4,7 +4,8 @@
 
 * The file `tarif.json` saves to redis. For big json files it's required 
 something like sentinel (see https://redis.io/topics/sentinel)
-* All requests logs to PostgreSQL.  
+* All requests logs to PostgreSQL.
+* There are `prod.env` and `local.env` (of course it unsafe, but for studying it's ok)
 
 ## To run the app just clone the repo and enter:
 ```
